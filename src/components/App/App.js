@@ -1,6 +1,6 @@
 import { Component } from 'react';
 import fetchTricks from '../../apiCalls';
-import Trick from '../Trick/Trick';
+import Tricks from '../Tricks/Tricks';
 import './App.css';
 
 class App extends Component {
@@ -13,8 +13,11 @@ class App extends Component {
   }
 
   fetchAllTricks = () => {
-    fetchTricks.getTrickData()
-      .then(data => this.setState({tricks: data}))
+    fetchTricks.getTrickData('http://localhost:3001/api/v1/tricks')
+      .then(data => {
+        console.log("trick-data", data)
+        this.setState({tricks: data})
+      })
       .catch(error => {
         console.log(error)
         this.setState({error: `${error}`})
@@ -28,7 +31,7 @@ class App extends Component {
       <div className="App">
         <h1>Sick Trick Wish List</h1>
         {this.state.error && <p>{this.state.error}</p>}
-        <Trick trickList={this.state.tricks}/>
+        <Tricks allTricks={this.state.tricks}/>
       </div>
     );
   }
