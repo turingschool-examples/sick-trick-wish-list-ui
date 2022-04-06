@@ -15,6 +15,16 @@ class Form extends Component {
         this.setState({ [event.target.name]: event.target.value });
     }
 
+    submitTrick = event => {
+        event.preventDefault();
+        const newTrick = {
+            id: Date.now(),
+            ...this.state
+        }
+        this.props.addTrick(newTrick);
+        this.clearForm();
+    }
+
     render() {
         return (
             <form>
