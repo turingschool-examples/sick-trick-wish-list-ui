@@ -1,12 +1,43 @@
 import { Component } from 'react';
 import './App.css';
+import Tricks from '../Tricks/Tricks'
+import Form from '../Form/Form'
 
 class App extends Component {
+  constructor(){
+    super();
+    this.state = {
+      tricks: []
+    }
+  }
+
+  componentDidMount = () => {
+    this.fetchData('tricks')
+  }
+
+  componentDidUpdate = () => {
+    console.log(this.state.tricks)
+  }
+
+  addTrick = (newTrick) => {
+    this.setState({tricks: [...this.state.tricks, newTrick]})
+  }
+
+  fetchData = (url) => {
+    return fetch(`http://localhost:3001/api/v1/${url}`)
+      .then(response => response.json())
+      .then(data => {
+        this.setState({tricks: data})
+      })
+  }
+
   render() {
     return (
-      <div className="App">
+      <main className="App">
         <h1>Sick Trick Wish List</h1>
-      </div>
+        <Form addTrick={this.addTrick}/>
+        <Tricks tricks={this.state.tricks}/>
+      </main>
     );
   }
 }
