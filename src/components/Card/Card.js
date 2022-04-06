@@ -5,7 +5,10 @@ import './Card.css'
 const Card = () => {
   return (
     <div className='card'>
-      <h3>Card!</h3>
+      <h4>Trick Name</h4>
+      <p>Obstacle:</p>
+      <p>Link to Tutorial:</p>
+      <p>link goes here</p>
     </div>
   )
 }
