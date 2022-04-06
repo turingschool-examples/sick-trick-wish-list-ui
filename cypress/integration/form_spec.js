@@ -32,5 +32,7 @@ describe('Form', () => {
   //Out of time but here's what else I would add:
 
   //Add a test to make sure the link to the trick video can be clicked on a card, and the user
-  //is directed to a new url. 
+  //is directed to a new url.
+
+  //Also, I would go back and make my site match the comp better, because it currently does not. 
 });
