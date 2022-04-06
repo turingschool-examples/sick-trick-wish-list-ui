@@ -32,15 +32,15 @@ class Form extends Component {
     render() {
         return (
             <form>
-                <select name='stance' value={this.state.stance}>
+                <select name='stance'>
                     <option>Choose your Stance</option>
                     <option
-                        value='regular'
+                        value={this.state.stance}
                         onChange={event => this.handleChange(event)}
                     >Regular                        
                     </option>
                     <option
-                        value='switch'
+                        value={this.state.stance}
                         onChange={event => this.handleChange(event)}
                     >Switch
                     </option>
@@ -53,30 +53,30 @@ class Form extends Component {
                     required={true}
                     onChange={event => this.handleChange(event)}
                 />
-                <select name='obstacle' value={this.state.obstacle}>
+                <select name='obstacle'>
                     <option>Choose your Obstacle</option>
                     <option
-                        value='flatground'
+                        value={this.state.obstacle}
                         onChange={event => this.handleChange(event)}
                     >Flatground                        
                     </option>
                     <option
-                        value='ledge'
+                        value={this.state.obstacle}
                         onChange={event => this.handleChange(event)}
                     >Ledge
                     </option>
                     <option
-                        value='rail'
+                        value={this.state.obstacle}
                         onChange={event => this.handleChange(event)}
                     >Rail
                     </option>
                     <option
-                        value='stairs'
+                        value={this.state.obstacle}
                         onChange={event => this.handleChange(event)}
                     >Stairs
                     </option>
                     <option
-                        value='pool'
+                        value={this.state.obstacle}
                         onChange={event => this.handleChange(event)}
                     >Pool
                     </option>
@@ -89,7 +89,7 @@ class Form extends Component {
                     required={true}
                     onChange={event => this.handleChange(event)}
                 />
-                <button>Send it!</button>
+                <button onClick={event=>this.submitTrick(event)}>Send it!</button>
             </form>
         )
     }
