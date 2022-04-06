@@ -1,5 +1,6 @@
 import React from 'react';
-import TrickCard from '../TrickCard/TrickCard'
+import TrickCard from '../TrickCard/TrickCard';
+import './Tricks.css'
 
 const Tricks = ({ allTricks }) => {
     let tricks = allTricks.map(trick => {
@@ -15,7 +16,7 @@ const Tricks = ({ allTricks }) => {
         )
     })
     return (
-        <div>
+        <div className='tricks-container'>
             {tricks}
         </div>
     )
