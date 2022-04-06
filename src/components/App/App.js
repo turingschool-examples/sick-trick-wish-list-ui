@@ -27,6 +27,10 @@ class App extends Component {
 
   componentDidMount = () => this.fetchAllTricks();
 
+  addTrick = (newTrick) => {
+    this.setState({ tricks: [...this.state.tricks, newTrick ]})
+  }
+
   render() {
     return (
       <main className="App">
