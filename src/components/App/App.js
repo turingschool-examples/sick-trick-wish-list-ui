@@ -27,6 +27,7 @@ class App extends Component {
     return (
       <div className="App">
         <h1>Sick Trick Wish List</h1>
+        {this.state.error && <p>{this.state.error}</p>}
       </div>
     );
   }
