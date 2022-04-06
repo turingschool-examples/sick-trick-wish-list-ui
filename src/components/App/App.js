@@ -1,5 +1,6 @@
 import { Component } from 'react';
 import './App.css';
+import Tricks from '../Tricks/Tricks'
 
 class App extends Component {
   constructor(){
@@ -8,11 +9,30 @@ class App extends Component {
       tricks: []
     }
   }
+
+  componentDidMount = () => {
+    this.fetchData('tricks')
+  }
+
+  componentDidUpdate = () => {
+    console.log(this.state.tricks)
+  }
+
+
+  fetchData = (url) => {
+    return fetch(`http://localhost:3001/api/v1/${url}`)
+      .then(response => response.json())
+      .then(data => {
+        this.setState({tricks: data})
+      })
+  }
+
   render() {
     return (
-      <div className="App">
+      <main className="App">
         <h1>Sick Trick Wish List</h1>
-      </div>
+        <Tricks tricks={this.state.tricks}/>
+      </main>
     );
   }
 }
