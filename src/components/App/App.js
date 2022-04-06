@@ -21,6 +21,8 @@ class App extends Component {
       })
   }
 
+  componentDidMount = () => this.fetchAllTricks();
+
   render() {
     return (
       <div className="App">
