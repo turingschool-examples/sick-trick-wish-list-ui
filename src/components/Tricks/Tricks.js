@@ -7,12 +7,12 @@ const Tricks = ({tricks}) => {
   const trickCards = tricks.map(trick => {
     return (
       <Card
-        id={tricks.id}
-        key={tricks.id}
-        stance={tricks.stance}
-        name={tricks.name}
-        obstacle={tricks.obstacle}
-        tutorial={tricks.tutorial}
+        id={trick.id}
+        key={trick.id}
+        stance={trick.stance}
+        name={trick.name}
+        obstacle={trick.obstacle}
+        tutorial={trick.tutorial}
       />
     )
   })

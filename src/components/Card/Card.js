@@ -2,13 +2,13 @@ import React from 'react';
 import './Card.css'
 
 
-const Card = () => {
+const Card = ({stance, name, obstacle, tutorial}) => {
   return (
     <div className='card'>
-      <h4>Trick Name</h4>
-      <p>Obstacle:</p>
+      <h4>{`${stance} ${name}`}</h4>
+      <p>Obstacle: {obstacle}</p>
       <p>Link to Tutorial:</p>
-      <p>link goes here</p>
+      <a href={tutorial}>{tutorial}</a>
     </div>
   )
 }
