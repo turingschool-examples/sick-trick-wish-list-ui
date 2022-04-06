@@ -19,6 +19,9 @@ class App extends Component {
     console.log(this.state.tricks)
   }
 
+  addTrick = (newTrick) => {
+    this.setState({tricks: [...this.state.tricks, newTrick]})
+  }
 
   fetchData = (url) => {
     return fetch(`http://localhost:3001/api/v1/${url}`)
