@@ -1,6 +1,7 @@
 import { Component } from 'react';
 import fetchTricks from '../../apiCalls';
 import Tricks from '../Tricks/Tricks';
+import Form from '../Form/Form';
 import './App.css';
 
 class App extends Component {
@@ -30,6 +31,7 @@ class App extends Component {
     return (
       <main className="App">
         <h1>Sick Trick Wish List</h1>
+        <Form />
         {this.state.error && <p>{this.state.error}</p>}
         <Tricks allTricks={this.state.tricks}/>
       </main>
