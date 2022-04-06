@@ -1,13 +1,17 @@
 import React from 'react';
+import TrickCard from '../TrickCard/TrickCard'
 
 const Tricks = ({ allTricks }) => {
     let tricks = allTricks.map(trick => {
         return(
-            <div>
-                <p>{trick.stance} {trick.name}</p>
-                <p>Obstacle: {trick.obstacle} </p>
-                <a href={trick.tutorial}>{trick.tutorial}</a>
-            </div>
+            <TrickCard 
+                id={trick.id}
+                key={trick.id}
+                stance={trick.stance}
+                name={trick.name}
+                obstacle={trick.obstacle}
+                tutorial={trick.tutorial}
+            />
         )
     })
     return (
