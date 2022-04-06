@@ -2,6 +2,12 @@ import { Component } from 'react';
 import './App.css';
 
 class App extends Component {
+  constructor(){
+    super();
+    this.state = {
+      tricks: []
+    }
+  }
   render() {
     return (
       <div className="App">
