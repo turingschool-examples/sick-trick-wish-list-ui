@@ -35,7 +35,7 @@ class App extends Component {
     return (
       <main className="App">
         <h1>Sick Trick Wish List</h1>
-        <Form />
+        <Form addTrick={this.addTrick}/>
         <Tricks tricks={this.state.tricks}/>
       </main>
     );
