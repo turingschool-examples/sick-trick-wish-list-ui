@@ -19,7 +19,7 @@ class Form extends Component {
         return (
             <form>
                 <select name={this.state.stance}>
-                    <option>Stance</option>
+                    <option>Choose your Stance</option>
                     <option
                         value='regular'
                         onChange={event => this.handleChange(event)}
@@ -29,6 +29,42 @@ class Form extends Component {
                         value='switch'
                         onChange={event => this.handleChange(event)}
                     >Switch
+                    </option>
+                </select>
+                <input
+                    type='text'
+                    placeholder='Name of Trick'
+                    name='name'
+                    value={this.state.name}
+                    required={true}
+                    onChange={event => this.handleChange(event)}
+                />
+                <select name={this.state.obstacle}>
+                    <option>Choose your Obstacle</option>
+                    <option
+                        value='flatground'
+                        onChange={event => this.handleChange(event)}
+                    >Flatground                        
+                    </option>
+                    <option
+                        value='ledge'
+                        onChange={event => this.handleChange(event)}
+                    >Ledge
+                    </option>
+                    <option
+                        value='rail'
+                        onChange={event => this.handleChange(event)}
+                    >Rail
+                    </option>
+                    <option
+                        value='stairs'
+                        onChange={event => this.handleChange(event)}
+                    >Stairs
+                    </option>
+                    <option
+                        value='pool'
+                        onChange={event => this.handleChange(event)}
+                    >Pool
                     </option>
                 </select>
             </form>
