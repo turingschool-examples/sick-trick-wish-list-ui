@@ -8,6 +8,13 @@ class App extends Component {
       tricks: []
     }
   }
+
+fetchData = (url) => {
+  return fetch(`http://localhost:3001/api/v1/${url}`)
+    .then(response => response.json())
+    .then(data => console.log(data))
+}
+
   render() {
     return (
       <div className="App">
