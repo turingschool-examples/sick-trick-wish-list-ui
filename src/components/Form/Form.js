@@ -75,6 +75,7 @@ class Form extends Component {
                     required={true}
                     onChange={event => this.handleChange(event)}
                 />
+                <button>Send it!</button>
             </form>
         )
     }
