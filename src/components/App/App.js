@@ -28,7 +28,7 @@ class App extends Component {
     return (
       <div className="App">
         <h1>Sick Trick Wish List</h1>
-        <TrickList tricks={this.state.tricks} />
+        {this.state.tricks && <TrickList tricks={this.state.tricks} />}
       </div>
     );
   }
