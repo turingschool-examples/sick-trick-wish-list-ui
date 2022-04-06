@@ -25,6 +25,10 @@ class Form extends Component {
         this.clearForm();
     }
 
+    clearForm = () => {
+        this.setState({ stance: '', name: '', obstacle: '', tutorial: '' });
+    }
+
     render() {
         return (
             <form>
