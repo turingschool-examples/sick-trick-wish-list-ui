@@ -18,7 +18,7 @@ class Form extends Component {
     render() {
         return (
             <form>
-                <select name={this.state.stance}>
+                <select name='stance' value={this.state.stance}>
                     <option>Choose your Stance</option>
                     <option
                         value='regular'
@@ -39,7 +39,7 @@ class Form extends Component {
                     required={true}
                     onChange={event => this.handleChange(event)}
                 />
-                <select name={this.state.obstacle}>
+                <select name='obstacle' value={this.state.obstacle}>
                     <option>Choose your Obstacle</option>
                     <option
                         value='flatground'
@@ -67,6 +67,14 @@ class Form extends Component {
                     >Pool
                     </option>
                 </select>
+                <input 
+                    type='text'
+                    placeholder='Link to Tutorial'
+                    name='tutorial'
+                    value={this.state.tutorial}
+                    required={true}
+                    onChange={event => this.handleChange(event)}
+                />
             </form>
         )
     }
