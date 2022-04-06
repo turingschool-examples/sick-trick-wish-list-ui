@@ -9,11 +9,22 @@ class App extends Component {
     }
   }
 
-fetchData = (url) => {
-  return fetch(`http://localhost:3001/api/v1/${url}`)
-    .then(response => response.json())
-    .then(data => console.log(data))
-}
+  componentDidMount = () => {
+    this.fetchData('tricks')
+  }
+
+  componentDidUpdate = () => {
+    console.log(this.state.tricks)
+  }
+
+
+  fetchData = (url) => {
+    return fetch(`http://localhost:3001/api/v1/${url}`)
+      .then(response => response.json())
+      .then(data => {
+        this.setState({tricks: data})
+      })
+  }
 
   render() {
     return (
