@@ -18,21 +18,27 @@ class Form extends Component {
 
   submitTrick = event => {
     event.preventDefault();
-    const newTrick = {
+    if (this.state.stance && this.state.name && this.state.obstacle && this.state.tutorial){
+      const newTrick = {
         ...this.state,
         id: Date.now()
+      }
+      this.props.addTrick(newTrick)
+    } else {
+      window.alert('Please fill out all fields before submitting.')
     }
-    this.props.addTrick(newTrick)
+    this.clearInputs()
   }
 
   clearInputs = () => {
-    this.setState({})
+    this.setState({stance: '', name:'', obstacle:'', tutorial: ''})
   }
 
   render() {
     return (
       <form>
         <select name="stance" value={this.state.stance} onChange={event => this.handleChange(event)}>
+            <option value="">Choose your stance</option>
             <option value="Regular">Regular</option>
             <option value="Switch">Switch</option>
         </select>
@@ -44,6 +50,7 @@ class Form extends Component {
           onChange={event => this.handleChange(event)}
         />
         <select name="obstacle" vale={this.state.obstacle}onChange={event => this.handleChange(event)}>
+          <option value="">Choose your obstacle</option>
           <option value="Flatground">Flatground</option>
           <option value="Ledge">Ledge</option>
           <option value="Rail">Rail</option>
