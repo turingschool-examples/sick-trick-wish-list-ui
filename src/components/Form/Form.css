@@ -1,0 +1,16 @@
+form {
+  margin: auto;
+  font-family: 'Fredoka One', cursive;
+}
+
+input {
+  margin: 5px;
+  width: 20%;
+  font-size: 18px;
+}
+
+select {
+  margin: 5px;
+  width: 20%;
+  font-size: 18px;
+}
