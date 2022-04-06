@@ -35,7 +35,7 @@ class App extends Component {
     return (
       <main className="App">
         <h1>Sick Trick Wish List</h1>
-        <Form />
+        <Form addTrick={this.addTrick}/>
         {this.state.error && <p>{this.state.error}</p>}
         <Tricks allTricks={this.state.tricks}/>
       </main>
