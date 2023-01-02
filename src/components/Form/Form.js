@@ -63,8 +63,8 @@ class Form extends Component {
         <input 
             placeholder='Link to Tutorial'
             type='text'
-            name='link'
-            value={this.state.link}
+            name='tutorial'
+            value={this.state.tutorial}
             onChange={(event) => this.handleChange(event)}
           />
 
