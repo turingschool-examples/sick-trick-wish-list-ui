@@ -1,6 +1,7 @@
 import { Component } from 'react';
 import TricksContainer from '../TricksContainer/TricksContainer';
 import './App.css';
+import Form from '../Form/Form';
 // import { fetchData } from '../../apiCalls'
 
 class App extends Component {
@@ -22,6 +23,7 @@ class App extends Component {
     return (
       <div className="App">
         <h1>Sick Trick Wish List</h1>
+        < Form />
         < TricksContainer tricks={this.state.tricks}/>
       </div>
     );
