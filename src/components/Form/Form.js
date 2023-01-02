@@ -1,47 +1,74 @@
 import React, { Component } from 'react'
 
 class Form extends Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
     this.state = {
-      name: '',
       stance: '',
-      obstacle: ''
+      name: '',
+      obstacle: '',
+      tutorial: ''
     }
   }
 
-  handleName(event) {
+  handleChange(event) {
     this.setState({[event.target.name]: event.target.value})
+  }
+
+  addTrick(event) {
+    event.preventDefault()
+    const newTrick = {
+      id: Date.now(),
+      ...this.state
+    }
+    this.props.addTrick(newTrick)
   }
 
   render() {
     return(
       <form>
-        <label> Name:
-          <input 
-            type='text'
-            name='name'
-            value={this.state.name}
-            onChange={(event) => this.handleName(event)}
-          />
-        </label>
-        <label> Stance: 
-          <select className='stance'>
-            <option></option>
-            <option>Regular</option>
-            <option>Switch</option>
-          </select>
-        </label>
-      <label> Obstacle:
-        <select className='obstacle'>
+        <select 
+          className='stance'
+          value={this.state.stance}
+          onChange={(event) => this.handleChange(event)}
+          name='stance'
+          >
           <option></option>
-          <option>Flatground</option>
-          <option>Ledge</option>
-          <option>Rail</option>
-          <option>Stairs</option>
-          <option>Pool</option>
+          <option>Regular</option>
+          <option>Switch</option>
         </select>
-      </label>
+
+         <input 
+          type='text'
+          placeholder='Name of Trick'
+          name='name'
+          value={this.state.name}
+          onChange={(event) => this.handleChange(event)}
+        />
+
+        <select 
+          className='obstacle'
+          value={this.state.obstacle}
+          onChange={(event) => this.handleChange(event)}
+          name='obstacle'
+          >
+          <option></option>
+          <option value='Flatground'>Flatground</option>
+          <option value='Ledge'>Ledge</option>
+          <option value='Rail'>Rail</option>
+          <option value='Stairs'>Stairs</option>
+          <option value='Pool'>Pool</option>
+        </select>
+
+        <input 
+            placeholder='Link to Tutorial'
+            type='text'
+            name='link'
+            value={this.state.link}
+            onChange={(event) => this.handleChange(event)}
+          />
+
+        <button onClick={(event) => this.addTrick(event)}>Send it!</button>
       </form>
     )
   }

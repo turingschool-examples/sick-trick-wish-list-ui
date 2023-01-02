@@ -10,6 +10,7 @@ class App extends Component {
     this.state = {
       tricks: []
     }
+    this.addTrick = this.addTrick.bind(this)
   }
 
   componentDidMount() {
@@ -19,12 +20,16 @@ class App extends Component {
       .catch(err => console.log('error', err))
   }
 
+  addTrick(newTrick) {
+    this.setState({tricks: [...this.state.tricks, newTrick]})
+  }
+
   render() {
     return (
       <div className="App">
         <h1>Sick Trick Wish List</h1>
-        < Form />
-        < TricksContainer tricks={this.state.tricks}/>
+        < Form addTrick={this.addTrick}/>
+        < TricksContainer tricks={this.state.tricks} />
       </div>
     );
   }
