@@ -33,7 +33,7 @@ class Form extends Component {
           onChange={(event) => this.handleChange(event)}
           name='stance'
           >
-          <option></option>
+          <option>Choose your Stance</option>
           <option>Regular</option>
           <option>Switch</option>
         </select>
@@ -52,7 +52,7 @@ class Form extends Component {
           onChange={(event) => this.handleChange(event)}
           name='obstacle'
           >
-          <option></option>
+          <option>Choose your Obstacle</option>
           <option value='Flatground'>Flatground</option>
           <option value='Ledge'>Ledge</option>
           <option value='Rail'>Rail</option>
