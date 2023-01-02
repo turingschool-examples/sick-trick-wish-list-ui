@@ -10,10 +10,10 @@ describe('User flow tricks page', () => {
     cy.get('h1').contains('Sick Trick Wish List')
   });
   it('Should have a trick card', () => {
-    cy.get('.trick-list > :nth-child(1)').should('contain', 'treflip')
+    cy.get('.trick-item').should('contain', 'treflip')
       .and('contain', 'flat ground')
       .and('contain', 'regular')
-      .and('contain', 'https://www.youtube.com/watch?v=XGw3YkQmNig')
+      .and('contain', 'Link to tutorial: https://www.youtube.com/watch?v=XGw3YkQmNig')
   })
   it('Should be able to choose a stance', () => {
     cy.get('.stance').select('Regular')
@@ -29,9 +29,7 @@ describe('User flow tricks page', () => {
   });
   it('Should add inputs into a trick card after button click', () => {
     cy.get('button').click()
-    cy.get('.trick-list > :nth-child(2)').should('contain', 'kickflip')
-      .and('contain', 'Flatground')
-      .and('contain', 'Regular')
-      .and('contain', 'tricks.com/')
+    cy.get(':nth-child(2) > h2').should('contain', 'Regular kickflip')
+    cy.get(':nth-child(2) > a').should('contain', 'Link to tutorial: tricks.com/')
   })
 })
