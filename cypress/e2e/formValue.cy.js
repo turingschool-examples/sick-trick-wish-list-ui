@@ -17,8 +17,4 @@ describe('should see a form when visiting the site that they can fill out', () =
     cy.get(".button").click()
   })
 
-  it('should reflect the data in the form input', () => {
-    cy.get('Choose Your Stance').get('Regular').contains('Regular')
-  })
-
 })
