@@ -1,4 +1,5 @@
 import { useState } from "react"
+import "./Form.css"
 
 const Form = ({addTrick}) => {
   
@@ -29,6 +30,38 @@ const Form = ({addTrick}) => {
 
 
   return (
-
+    <form className="form">
+      <label className="label">
+        <select name="Choose Your Stance">
+        <option value="" disabled selected>Choose Your Stance</option>
+        <option value="Regular">Regular</option>
+          <option value="Switch">Switch</option>
+        </select>
+      </label>
+      <input className="input"
+        type="text"
+        placeholder="Name of Trick"
+        name="trick"
+        value={name}
+        onChange={event => setName(event.target.value)}
+      />
+      <label className="label">
+        <select name="Choose Your Obstacle">
+          <option value="" disabled selected>Choose Your Obstacle</option>
+          <option value="Regular">Regular</option>
+          <option value="Switch">Switch</option>
+        </select>
+      </label>
+      <input className="input"
+        type="text"
+        placeholder="Link to Tutorial"
+        name="tutorial"
+        value={tutorial}
+        onChange={event => setTutorial(event.target.value)}
+      />
+      <button className="button">Send It!!</button>
+    </form>
   )
 }
+
+export default Form

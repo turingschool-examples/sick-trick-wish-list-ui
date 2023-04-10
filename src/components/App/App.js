@@ -3,6 +3,7 @@ import './App.css';
 import fetchPromises from '../../data/api';
 import { useState, useEffect } from 'react';
 import TrickContainer from '../Trick Container/TrickContainer';
+import Form from '../Form/Form';
 
 const App = () => {
   const [tricks, setTricks] = useState([])
@@ -27,6 +28,7 @@ const App = () => {
   return (
     <div className="App">
       <h1>Sick Trick Wish List</h1>
+      <Form />
       <TrickContainer tricks={tricks}/>
     </div>
   )

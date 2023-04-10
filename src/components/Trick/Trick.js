@@ -6,7 +6,7 @@ const Trick = ({stance, name, obstacle, tutorial, id}) => {
     <div className="trick">
       <p>{stance}: {name}</p>
       <p>{obstacle}</p>
-      <p>{tutorial}</p>
+      <a href={tutorial}>{tutorial}</a>
     </div>
   )
 }
