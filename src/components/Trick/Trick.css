@@ -1,0 +1,9 @@
+
+
+.trick {
+  border: 2px solid black;
+  border-radius: 8px;
+  margin: 10px;
+  width:40vw;
+  text-align: center;
+}
