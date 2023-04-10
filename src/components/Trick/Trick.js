@@ -1,5 +1,4 @@
 import React from "react";
-import { formatData } from "../../utils/utils";
 import "./Trick.css";
 
 export const Trick = ({trick}) => {

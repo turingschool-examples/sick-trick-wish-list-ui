@@ -1,8 +1,8 @@
 import { Component } from "react";
+import { Form } from "../Form/Form";
+import { Tricks } from "../Tricks/Tricks";
 import { fetchData } from "../../data/apiCalls";
 import "./App.css";
-import { Trick } from "../Trick/Trick";
-import { Tricks } from "../Tricks/Tricks";
 
 class App extends Component {
   constructor() {
@@ -26,6 +26,7 @@ class App extends Component {
     return (
       <div className="App">
         <h1>Sick Trick Wish List</h1>
+        <Form/>
         <Tricks allTricks={this.state.tricks} />
       </div>
     );
