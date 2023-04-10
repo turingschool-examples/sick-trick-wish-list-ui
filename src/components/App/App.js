@@ -1,7 +1,7 @@
 import { Component } from "react";
 import { Form } from "../Form/Form";
 import { Tricks } from "../Tricks/Tricks";
-import { fetchData } from "../../data/apiCalls";
+import { fetchData, postData } from "../../data/apiCalls";
 import "./App.css";
 
 class App extends Component {
@@ -10,6 +10,17 @@ class App extends Component {
     this.state = {
       tricks: [],
     }
+  }
+
+  addTrick = (stance, trick, obstacle, tutorial) => {
+    const newTrick = {
+      stance: stance,
+      trick: trick,
+      obstacle: obstacle,
+      tutorial: tutorial
+    }
+    console.log(newTrick)
+    postData(newTrick);
   }
 
   componentDidMount () {
@@ -26,7 +37,7 @@ class App extends Component {
     return (
       <div className="App">
         <h1>Sick Trick Wish List</h1>
-        <Form/>
+        <Form addTrick={this.addTrick}/>
         <Tricks allTricks={this.state.tricks} />
       </div>
     );
