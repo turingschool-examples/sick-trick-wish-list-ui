@@ -14,6 +14,16 @@ const App = () => {
 
   useEffect(() => getData(), [])
 
+  const addTrick = (newTrick) => {
+    setTricks([...tricks, newTrick])
+  }
+
+  // deleteTrick = (id) => {
+  //   const filterTricks = tricks.map(trick => trick.id !== id)
+  //   setTricks(filterTricks)
+  // }
+
+
   return (
     <div className="App">
       <h1>Sick Trick Wish List</h1>

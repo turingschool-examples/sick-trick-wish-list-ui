@@ -1,4 +1,5 @@
 import Trick from "../Trick/Trick"
+import "./TrickContainer.css"
 
 const TrickContainer = ({tricks}) => {
   const allTricks = tricks.map((trick) => {
