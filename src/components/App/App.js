@@ -1,11 +1,32 @@
-import { Component } from 'react';
-import './App.css';
+import { Component } from "react";
+import { fetchData } from "../../data/apiCalls";
+import "./App.css";
+import { Trick } from "../Trick/Trick";
+import { Tricks } from "../Tricks/Tricks";
 
 class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      tricks: [],
+    }
+  }
+
+  componentDidMount () {
+    fetchData()
+      .then(data => {
+        data.map(trick => {
+          this.setState({ tricks: [...this.state.tricks, trick]});
+        });
+      })
+      .catch(error => console.log('error', error));
+  }
+
   render() {
     return (
       <div className="App">
         <h1>Sick Trick Wish List</h1>
+        <Tricks sickTricks={this.state.tricks} />
       </div>
     );
   }
