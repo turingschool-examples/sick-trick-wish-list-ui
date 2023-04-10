@@ -1,0 +1,19 @@
+.trick {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  background-color: #eff8ff;
+  height: 175px;
+  width: 400px;
+  margin: 5px;
+  border-radius: 12px;
+}
+
+.trick > p {
+  margin: 0;
+}
+
+.trick-name, .trick-obstacle {
+  text-transform: capitalize;
+}
+

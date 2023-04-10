@@ -26,7 +26,7 @@ class App extends Component {
     return (
       <div className="App">
         <h1>Sick Trick Wish List</h1>
-        <Tricks sickTricks={this.state.tricks} />
+        <Tricks allTricks={this.state.tricks} />
       </div>
     );
   }
