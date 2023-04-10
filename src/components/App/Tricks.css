@@ -3,6 +3,8 @@
     display: flex;
     justify-content: space-around;
     gap: 2rem;
+    margin-top: 5vh;
+    flex-wrap: wrap;
 }
 
 .trick-box {
