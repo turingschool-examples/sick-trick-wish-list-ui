@@ -17,4 +17,9 @@ describe('should see a form when visiting the site that they can fill out', () =
     cy.get(".button").click()
   })
 
+  it('should reflect the value', () => {
+    cy.get('[placeholder="Name of Trick"]')
+    .type('Ollie')
+    .should('have.value', 'Ollie')
+  })
 })
