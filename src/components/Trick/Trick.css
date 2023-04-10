@@ -1,0 +1,14 @@
+
+
+.trick {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid black;
+  border-radius: 8px;
+  margin: 10px;
+  width: 350px;
+  height: 225px;
+  text-align: center;
+  background-color: lightgray;
+
+}
