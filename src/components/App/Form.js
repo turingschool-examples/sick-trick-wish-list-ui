@@ -24,8 +24,7 @@ export default class Form extends Component {
                 tutorial: this.state.tutorial,
                 id: Math.floor(Math.random() * 1000)
             })
-
-            window.location.reload(false)
+            
     }
 
   render() {
