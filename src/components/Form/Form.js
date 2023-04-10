@@ -28,8 +28,7 @@ const Form = ({ addTrick }) => {
 
   return (
     <form className="form">
-      <label className="label">
-        <select name="Choose Your Stance">
+        <select name="Choose Your Stance" value={stance} onChange={(event) => setStance(event.target.value)}>
           <option value="" disabled selected>
             Choose Your Stance
           </option>
@@ -37,7 +36,6 @@ const Form = ({ addTrick }) => {
           <option value="Switch">Switch</option>
           onChange={(event) => setStance(event.target.value)}
         </select>
-      </label>
       <input
         className="input"
         type="text"
@@ -46,8 +44,7 @@ const Form = ({ addTrick }) => {
         value={name}
         onChange={(event) => setName(event.target.value)}
       />
-      <label className="label">
-        <select name="Choose Your Obstacle">
+        <select name="Choose Your Obstacle" value={obstacle} onChange={(event) => setObstacle(event.target.value)}>
           <option value="" disabled selected>
             Choose Your Obstacle
           </option>
@@ -56,9 +53,7 @@ const Form = ({ addTrick }) => {
           <option value="Rail">Rail</option>
           <option value="Stairs">Stairs</option>
           <option value="Pool">Pool</option>
-          onChange={(event) => setObstacle(event.target.value)}
         </select>
-      </label>
       <input
         className="input"
         type="text"
