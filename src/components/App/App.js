@@ -19,12 +19,6 @@ const App = () => {
     setTricks([...tricks, newTrick])
   }
 
-  // deleteTrick = (id) => {
-  //   const filterTricks = tricks.map(trick => trick.id !== id)
-  //   setTricks(filterTricks)
-  // }
-
-
   return (
     <div className="App">
       <h1>Sick Trick Wish List</h1>
@@ -35,20 +29,3 @@ const App = () => {
 }
 
 export default App;
-
-
-
-
-
-
-// class App extends Component {
-//   render() {
-//     return (
-//       <div className="App">
-//         <h1>Sick Trick Wish List</h1>
-//       </div>
-//     );
-//   }
-// }
-
-// export default App;

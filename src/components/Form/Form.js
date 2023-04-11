@@ -29,12 +29,9 @@ const Form = ({ addTrick }) => {
   return (
     <form className="form">
         <select name="Choose Your Stance" value={stance} onChange={(event) => setStance(event.target.value)} required>
-          <option value="" disabled selected>
-            Choose Your Stance
-          </option>
+          <option value="" disabled selected>Choose Your Stance</option>
           <option value="Regular">Regular</option>
           <option value="Switch">Switch</option>
-          onChange={(event) => setStance(event.target.value)}
         </select>
       <input
         className="input"
