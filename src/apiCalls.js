@@ -1,7 +1,6 @@
 export const getTricks = async () => {
   const response = await fetch('http://localhost:3001/api/v1/tricks');
   const data = await handleError(response);
-  console.log(data);
   return data;
 };
 
