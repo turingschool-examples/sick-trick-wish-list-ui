@@ -25,12 +25,14 @@ function App() {
     return () => setFetchError(null);
   }, []);
 
-  
+  const addTrick = (newTrick) => {
+    setSavedTricks(prevTricks => [...prevTricks, newTrick])
+  }
 
   return (
     <div className="App">
       <h1>Sick Trick Wish List</h1>
-      <Form />
+      <Form addTrick={addTrick} />
       {isLoading && <p>LOADING</p>}
       {fetchError && <h2>{fetchError.message}</h2>}
       <section className='trick-container'>
